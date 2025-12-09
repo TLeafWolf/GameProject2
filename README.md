@@ -28,3 +28,37 @@ Enemy/damage types:
 Skeleton
 
 traps
+
+ # Implementing Core Mechanics
+ 
+## Main Character & Controls (Teresa Newman)
+
+Create a main character with animations and proper collider setup.
+
+Map input controls to movement using Godot's Input System.
+
+Ensure smooth interaction between the main character and the game world.
+
+## NPCs & MOBs (Aaron Thomas Roberts)
+
+Design at least one NPCs with meaningful interactions (dialogue, item exchange, etc.).
+
+Program at least two MOBs with non-random behaviors (e.g., patrolling, attacking, reacting to the player).
+
+Implement AI navigation so the NPC and MOBs respond dynamically to the environment.
+
+## Game Physics & Event Triggers (Devon Sabody)
+
+Use vectors to control movement, acceleration, and forces applied to objects.
+
+Create an event that triggers based on the player’s actions and occurs some distance away from them.
+
+## Level Design & Navigation (Teresa Newman, Aaron Thomas Roberts, Devon Sabody)
+
+Develop at least one full playable level that includes:
+
+A structured environment with interactive elements.
+
+A Navigation Mesh Agent for AI characters to move intelligently.
+
+A cutscene before the level begins and one at the end of the level (both success and failure endings).
