@@ -10,7 +10,7 @@ Fantasy Comedy?
 
 The sword is the cane the old man gave you from a barrel of canes. 
 
-(The old man rummaging around the cane to find the right cane? Tops of the canes sticking out of the barrel as soon as he takes off the lid. Saying “what do you mean you can’t fight of the skeletons?”)
+(The old man rummaging around the cane to find the right cane? Tops of the canes sticking out of the barrel as soon as he takes off the lid. Saying “what do you mean you can’t fight of the goblins?”)
 
 The shield is the lid from the barrels of canes
 
@@ -25,9 +25,9 @@ When you give him the glasses he complains about a crack in them.
 
 Enemy/damage types:
 
-Skeleton
+Goblin
 
-traps
+Traps
 
  # Implementing Core Mechanics
  
