@@ -35,7 +35,7 @@ Traps
 
 Create a main character with animations and proper collider setup.
 
-Map input controls to movement using Godot's Input System.
+Map input controls to movement using Godot's Input System.(done)
 
 Ensure smooth interaction between the main character and the game world.
 
