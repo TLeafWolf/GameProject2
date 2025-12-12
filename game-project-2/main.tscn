@@ -47,3 +47,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.77576804, 3, -1.8421049)
 
 [node name="Camera3D" type="Camera3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 0.9156205, 0.40204367, 0, -0.40204367, 0.9156205, -0.18501902, 2.356316, 3.5803232)
+
+[node name="HealthLabel" type="Label3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.064903975, 1.4475584, 1.2564569)
+font_size = 64
