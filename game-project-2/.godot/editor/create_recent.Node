@@ -1,6 +1,6 @@
-Timer
 CollisionShape3D
 Area3D
+Timer
 CSGBox3D
 NavigationRegion3D
 NavigationAgent3D

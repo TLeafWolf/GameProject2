@@ -1,14 +1,14 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1765596768
+::res://::1765657017
 enemy.gd::GDScript::5562197541375541958::1765587116::0::1::::<>CharacterBody3D<><>0<>0<><>::
-enemy.tscn::PackedScene::1263572922639551870::1765587117::0::1::::<><><>0<>0<><>::uid://climt0qddepvq::::res://enemy.gd<>uid://b1o2fgmvv6erp::::res://PlaceHolders/obj/colored_block_yellow.obj
+enemy.tscn::PackedScene::1263572922639551870::1765597080::0::1::::<><><>0<>0<><>::uid://climt0qddepvq::::res://enemy.gd<>uid://b3mavaus6rxxw::::res://Assests3dModel/Goblin(1).blend
 icon.svg::CompressedTexture2D::2202589729876588255::1765561802::1765563398::1::::<><><>0<>0<>43cf898c6d6fe624e438d99cc8d0eec4<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 main.tscn::PackedScene::5028579852695398954::1765563376::0::1::::<><><>0<>0<><>::uid://bcnliylecdrk1::::res://PlaceHolders/obj/dirt_with_grass.obj<>uid://cniym77vlahk5::::res://player.tscn
 player.gd::GDScript::2264194449909446674::1765587116::0::1::::<>CharacterBody3D<><>0<>0<><>::
 player.tscn::PackedScene::5703291725216153182::1765586887::0::1::::<><><>0<>0<><>::uid://b1o2fgmvv6erp::::res://PlaceHolders/obj/colored_block_yellow.obj<>uid://7i17mjbkusi1::::res://player.gd
 test2.tscn::PackedScene::8918946465824472269::1765589164::0::1::::<><><>0<>0<><>::uid://bcnliylecdrk1::::res://PlaceHolders/obj/dirt_with_grass.obj<>uid://cniym77vlahk5::::res://player.tscn<>uid://sac4j2p8rvso::::res://enemy.tscn
 test.tscn::PackedScene::5830347620695350641::1765587116::0::1::::<><><>0<>0<><>::uid://bcnliylecdrk1::::res://PlaceHolders/obj/dirt_with_grass.obj<>uid://cniym77vlahk5::::res://player.tscn<>uid://sac4j2p8rvso::::res://enemy.tscn
-::res://Assests3dModel/::1765596687
+::res://Assests3dModel/::1765596803
 Barrel.blend::PackedScene::3281854403319414928::1765561802::1765596777::1::::<><><>0<>0<>8b272d93576f5c4deeb999847f096837<>res://.godot/imported/Barrel.blend-3227b50f6bf6ba2cc95a3d2ecadd3c97.scn::
 Cane.blend::PackedScene::4564939749709174482::1765561802::1765596802::1::::<><><>0<>0<>543aee27561d278677d05814560d923d<>res://.godot/imported/Cane.blend-3a8f68863e9928c39a40aea977207c88.scn::
 Goblin(1).blend::PackedScene::4376518372034775864::1765561802::1765596802::1::::<><><>0<>0<>039a6941ff02efad700b0560d687ee8a<>res://.godot/imported/Goblin(1).blend-6c0d64271984c084d7051d6fcf8cebda.scn::
@@ -16,7 +16,7 @@ OldMan.blend::PackedScene::6011807021849164706::1765561802::1765596802::1::::<><
 shield.blend::PackedScene::5192924070257061236::1765561802::1765596802::1::::<><><>0<>0<>0b1aa4d05f095c7c5d7294d48be001cc<>res://.godot/imported/shield.blend-c4635e3a2746e2e6ff7b117890336e34.scn::
 stand.blend::PackedScene::4803375154640171075::1765561802::1765596802::1::::<><><>0<>0<>169e00bd7301f37752d6912d5dfdaf6e<>res://.godot/imported/stand.blend-3876306821e5392485d8f70542bb08b5.scn::
 stand_w_glasses.blend::PackedScene::8109436290835816915::1765561802::1765596802::1::::<><><>0<>0<>da6d43b7a2bb29594a683b7ab45d4ce0<>res://.godot/imported/stand_w_glasses.blend-a6e7be30aa9c94a532135fb3ab2423b1.scn::
-::res://Assests3dModel/EnviromentModels/::1765585208
+::res://Assests3dModel/EnviromentModels/::1765596813
 ceiling.blend::PackedScene::2614371305070654778::1765585142::1765596812::1::::<><><>0<>0<>f7b35ef31679a093fa652612d91bf25a<>res://.godot/imported/ceiling.blend-95a200bd8fc80ee524caa41003fb326a.scn::
 corner_L.blend::PackedScene::7939527537466331005::1765585142::1765596812::1::::<><><>0<>0<>f3decc25b7d2df717caa2bdeddc1b736<>res://.godot/imported/corner_L.blend-acf0c12f5215ef4424935d55d3712485.scn::
 corner_R.blend::PackedScene::1484217516301953397::1765585142::1765596813::1::::<><><>0<>0<>0ee7229d2bba71755ac48d381010950d<>res://.godot/imported/corner_R.blend-5710c4ec6bc69b2306a12633c756a3c0.scn::
