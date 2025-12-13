@@ -4,11 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://b3mavaus6rxxw"
-valid=false
+path="res://.godot/imported/Goblin(1).blend-6c0d64271984c084d7051d6fcf8cebda.scn"
 
 [deps]
 
 source_file="res://Assests3dModel/Goblin(1).blend"
+dest_files=["res://.godot/imported/Goblin(1).blend-6c0d64271984c084d7051d6fcf8cebda.scn"]
 
 [params]
 

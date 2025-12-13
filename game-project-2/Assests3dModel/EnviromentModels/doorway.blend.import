@@ -4,11 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bg1bp42kw5j3h"
-valid=false
+path="res://.godot/imported/doorway.blend-d5a422d589da3e4795c57d25d9084dc8.scn"
 
 [deps]
 
 source_file="res://Assests3dModel/EnviromentModels/doorway.blend"
+dest_files=["res://.godot/imported/doorway.blend-d5a422d589da3e4795c57d25d9084dc8.scn"]
 
 [params]
 

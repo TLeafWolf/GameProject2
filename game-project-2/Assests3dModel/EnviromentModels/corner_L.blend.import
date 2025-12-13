@@ -4,11 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dld74gq7c4fc4"
-valid=false
+path="res://.godot/imported/corner_L.blend-acf0c12f5215ef4424935d55d3712485.scn"
 
 [deps]
 
 source_file="res://Assests3dModel/EnviromentModels/corner_L.blend"
+dest_files=["res://.godot/imported/corner_L.blend-acf0c12f5215ef4424935d55d3712485.scn"]
 
 [params]
 

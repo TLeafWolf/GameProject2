@@ -4,11 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://cao15fniears2"
-valid=false
+path="res://.godot/imported/stand.blend-3876306821e5392485d8f70542bb08b5.scn"
 
 [deps]
 
 source_file="res://Assests3dModel/stand.blend"
+dest_files=["res://.godot/imported/stand.blend-3876306821e5392485d8f70542bb08b5.scn"]
 
 [params]
 

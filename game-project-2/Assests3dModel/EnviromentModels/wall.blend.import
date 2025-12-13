@@ -4,11 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://busx538pxchxl"
-valid=false
+path="res://.godot/imported/wall.blend-e0506549a0b0c7a2b25f915cc305c2c0.scn"
 
 [deps]
 
 source_file="res://Assests3dModel/EnviromentModels/wall.blend"
+dest_files=["res://.godot/imported/wall.blend-e0506549a0b0c7a2b25f915cc305c2c0.scn"]
 
 [params]
 

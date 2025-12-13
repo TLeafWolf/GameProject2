@@ -4,11 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dnsjh36s2df44"
-valid=false
+path="res://.godot/imported/stand_w_glasses.blend-a6e7be30aa9c94a532135fb3ab2423b1.scn"
 
 [deps]
 
 source_file="res://Assests3dModel/stand_w_glasses.blend"
+dest_files=["res://.godot/imported/stand_w_glasses.blend-a6e7be30aa9c94a532135fb3ab2423b1.scn"]
 
 [params]
 
