@@ -43,7 +43,7 @@ Ensure smooth interaction between the main character and the game world.
 
 Design at least one NPCs with meaningful interactions (dialogue, item exchange, etc.).
 
-Program at least two MOBs with non-random behaviors (e.g., patrolling, attacking, reacting to the player).
+Program at least two MOBs with non-random behaviors (e.g., patrolling, attacking, reacting to the player). (done?)
 
 Implement AI navigation so the NPC and MOBs respond dynamically to the environment. (done?)
 
@@ -59,6 +59,6 @@ Develop at least one full playable level that includes:
 
 A structured environment with interactive elements.
 
-A Navigation Mesh Agent for AI characters to move intelligently.
+A Navigation Mesh Agent for AI characters to move intelligently. (done?)
 
 A cutscene before the level begins and one at the end of the level (both success and failure endings).
