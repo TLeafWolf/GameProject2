@@ -45,11 +45,11 @@ Design at least one NPCs with meaningful interactions (dialogue, item exchange, 
 
 Program at least two MOBs with non-random behaviors (e.g., patrolling, attacking, reacting to the player).
 
-Implement AI navigation so the NPC and MOBs respond dynamically to the environment.
+Implement AI navigation so the NPC and MOBs respond dynamically to the environment. (done?)
 
 ## Game Physics & Event Triggers (Devon Sabody)
 
-Use vectors to control movement, acceleration, and forces applied to objects.
+Use vectors to control movement, acceleration, and forces applied to objects. (done?)
 
 Create an event that triggers based on the player’s actions and occurs some distance away from them.
 
