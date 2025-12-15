@@ -1,13 +1,12 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1765657017
-enemy.gd::GDScript::5562197541375541958::1765587116::0::1::::<>CharacterBody3D<><>0<>0<><>::
-enemy.tscn::PackedScene::1263572922639551870::1765597080::0::1::::<><><>0<>0<><>::uid://climt0qddepvq::::res://enemy.gd<>uid://b3mavaus6rxxw::::res://Assests3dModel/Goblin(1).blend
+::res://::1765660300
+enemy.gd::GDScript::5562197541375541958::1765659057::0::1::::<>CharacterBody3D<><>0<>0<><>::
+enemy.tscn::PackedScene::1263572922639551870::1765658774::0::1::::<><><>0<>0<><>::uid://climt0qddepvq::::res://enemy.gd<>uid://b3mavaus6rxxw::::res://Assests3dModel/Goblin(1).blend
 icon.svg::CompressedTexture2D::2202589729876588255::1765561802::1765563398::1::::<><><>0<>0<>43cf898c6d6fe624e438d99cc8d0eec4<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 main.tscn::PackedScene::5028579852695398954::1765563376::0::1::::<><><>0<>0<><>::uid://bcnliylecdrk1::::res://PlaceHolders/obj/dirt_with_grass.obj<>uid://cniym77vlahk5::::res://player.tscn
 player.gd::GDScript::2264194449909446674::1765587116::0::1::::<>CharacterBody3D<><>0<>0<><>::
 player.tscn::PackedScene::5703291725216153182::1765586887::0::1::::<><><>0<>0<><>::uid://b1o2fgmvv6erp::::res://PlaceHolders/obj/colored_block_yellow.obj<>uid://7i17mjbkusi1::::res://player.gd
-test2.tscn::PackedScene::8918946465824472269::1765589164::0::1::::<><><>0<>0<><>::uid://bcnliylecdrk1::::res://PlaceHolders/obj/dirt_with_grass.obj<>uid://cniym77vlahk5::::res://player.tscn<>uid://sac4j2p8rvso::::res://enemy.tscn
-test.tscn::PackedScene::5830347620695350641::1765587116::0::1::::<><><>0<>0<><>::uid://bcnliylecdrk1::::res://PlaceHolders/obj/dirt_with_grass.obj<>uid://cniym77vlahk5::::res://player.tscn<>uid://sac4j2p8rvso::::res://enemy.tscn
+test2.tscn::PackedScene::8918946465824472269::1765657745::0::1::::<><><>0<>0<><>::uid://bcnliylecdrk1::::res://PlaceHolders/obj/dirt_with_grass.obj<>uid://cniym77vlahk5::::res://player.tscn<>uid://sac4j2p8rvso::::res://enemy.tscn
 ::res://Assests3dModel/::1765596803
 Barrel.blend::PackedScene::3281854403319414928::1765561802::1765596777::1::::<><><>0<>0<>8b272d93576f5c4deeb999847f096837<>res://.godot/imported/Barrel.blend-3227b50f6bf6ba2cc95a3d2ecadd3c97.scn::
 Cane.blend::PackedScene::4564939749709174482::1765561802::1765596802::1::::<><><>0<>0<>543aee27561d278677d05814560d923d<>res://.godot/imported/Cane.blend-3a8f68863e9928c39a40aea977207c88.scn::

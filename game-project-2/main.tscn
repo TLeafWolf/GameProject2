@@ -1,7 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://cdv48fwvkumik"]
+[gd_scene load_steps=14 format=3 uid="uid://cdv48fwvkumik"]
 
 [ext_resource type="ArrayMesh" uid="uid://bcnliylecdrk1" path="res://PlaceHolders/obj/dirt_with_grass.obj" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://cniym77vlahk5" path="res://player.tscn" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://cwspt7ouw8qg7" path="res://Assests3dModel/EnviromentModels/floor.blend" id="3_272bh"]
+[ext_resource type="PackedScene" uid="uid://bg1bp42kw5j3h" path="res://Assests3dModel/EnviromentModels/doorway.blend" id="4_5vw27"]
+[ext_resource type="PackedScene" uid="uid://bavthgqwclwsx" path="res://Assests3dModel/EnviromentModels/wall2.blend" id="5_kek77"]
+[ext_resource type="PackedScene" uid="uid://busx538pxchxl" path="res://Assests3dModel/EnviromentModels/wall.blend" id="6_4c57u"]
+[ext_resource type="PackedScene" uid="uid://bdiokwlb53sj7" path="res://Assests3dModel/EnviromentModels/ceiling.blend" id="7_efxa6"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ig7tw"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -27,6 +32,9 @@ item/0/shapes = [SubResource("BoxShape3D_0xm2m"), Transform3D(1, 0, 0, 0, 1, 0, 
 item/0/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/0/navigation_layers = 1
 
+[sub_resource type="NavigationMesh" id="NavigationMesh_dg77c"]
+geometry_parsed_geometry_type = 0
+
 [node name="main" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -51,3 +59,24 @@ transform = Transform3D(1, 0, 0, 0, 0.9156205, 0.40204367, 0, -0.40204367, 0.915
 [node name="HealthLabel" type="Label3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.064903975, 1.4475584, 1.2564569)
 font_size = 64
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_dg77c")
+
+[node name="floor" parent="NavigationRegion3D" instance=ExtResource("3_272bh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 1.7, -3)
+
+[node name="doorway" parent="NavigationRegion3D" instance=ExtResource("4_5vw27")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 1.7, -3)
+
+[node name="wall2" parent="NavigationRegion3D" instance=ExtResource("5_kek77")]
+transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, 16, 1.7, -10)
+
+[node name="wall" parent="NavigationRegion3D" instance=ExtResource("6_4c57u")]
+transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, 16, 1.7, 3)
+
+[node name="ceiling" parent="NavigationRegion3D" instance=ExtResource("7_efxa6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 1.7, -3)
+
+[node name="ceiling2" parent="NavigationRegion3D" instance=ExtResource("7_efxa6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 1.7, -3)
