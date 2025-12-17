@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cdv48fwvkumik"]
+[gd_scene load_steps=18 format=3 uid="uid://cdv48fwvkumik"]
 
 [ext_resource type="ArrayMesh" uid="uid://bcnliylecdrk1" path="res://PlaceHolders/obj/dirt_with_grass.obj" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://cniym77vlahk5" path="res://player.tscn" id="2_0xm2m"]
@@ -38,6 +38,15 @@ vertices = PackedVector3Array(10.079585, 8.798, -10.406195, 10.079585, 8.798, -8
 polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(0, 3, 2), PackedInt32Array(5, 4, 6), PackedInt32Array(6, 4, 8), PackedInt32Array(6, 8, 7), PackedInt32Array(10, 9, 11), PackedInt32Array(11, 9, 12), PackedInt32Array(15, 14, 13), PackedInt32Array(17, 16, 13), PackedInt32Array(13, 16, 15), PackedInt32Array(19, 18, 15), PackedInt32Array(16, 12, 20), PackedInt32Array(9, 21, 12), PackedInt32Array(12, 21, 20), PackedInt32Array(15, 16, 19), PackedInt32Array(19, 16, 20), PackedInt32Array(23, 22, 24), PackedInt32Array(24, 22, 25), PackedInt32Array(25, 27, 26), PackedInt32Array(24, 25, 28), PackedInt32Array(28, 25, 29), PackedInt32Array(29, 25, 26), PackedInt32Array(33, 32, 30), PackedInt32Array(30, 32, 31), PackedInt32Array(35, 34, 36), PackedInt32Array(36, 34, 38), PackedInt32Array(36, 38, 37), PackedInt32Array(39, 41, 40), PackedInt32Array(39, 43, 41), PackedInt32Array(41, 43, 42), PackedInt32Array(41, 37, 40), PackedInt32Array(40, 37, 38), PackedInt32Array(42, 44, 41), PackedInt32Array(46, 45, 47), PackedInt32Array(47, 45, 49), PackedInt32Array(47, 49, 48), PackedInt32Array(51, 54, 52), PackedInt32Array(52, 54, 50), PackedInt32Array(52, 50, 53), PackedInt32Array(53, 55, 52), PackedInt32Array(52, 55, 57), PackedInt32Array(52, 57, 56), PackedInt32Array(53, 48, 55), PackedInt32Array(55, 48, 49), PackedInt32Array(52, 58, 51), PackedInt32Array(60, 59, 61), PackedInt32Array(61, 59, 62), PackedInt32Array(62, 59, 63), PackedInt32Array(65, 64, 62), PackedInt32Array(63, 67, 66), PackedInt32Array(11, 70, 10), PackedInt32Array(10, 70, 71), PackedInt32Array(71, 70, 68), PackedInt32Array(71, 68, 69), PackedInt32Array(63, 66, 62), PackedInt32Array(62, 66, 65), PackedInt32Array(68, 64, 69), PackedInt32Array(69, 64, 65), PackedInt32Array(75, 74, 72), PackedInt32Array(72, 74, 73), PackedInt32Array(79, 78, 76), PackedInt32Array(76, 78, 77), PackedInt32Array(82, 81, 83), PackedInt32Array(83, 81, 80), PackedInt32Array(87, 86, 84), PackedInt32Array(84, 86, 85)]
 geometry_parsed_geometry_type = 0
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_5vw27"]
+size = Vector3(12.5616455, 2.0424805, 14.708984)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kek77"]
+size = Vector3(12.669922, 9.878052, 1.980957)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4c57u"]
+size = Vector3(2.2574615, 4.9941406, 5.312561)
+
 [node name="main" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -63,6 +72,12 @@ transform = Transform3D(1, 0, 0, 0, 0.9156205, 0.40204367, 0, -0.40204367, 0.915
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.064903975, 1.4475584, 1.2564569)
 font_size = 64
 
+[node name="Enemy" parent="." instance=ExtResource("8_5vw27")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.092524, 2.5613246, -3.6705592)
+
+[node name="Enemy2" parent="." instance=ExtResource("8_5vw27")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.580296, 2.7661843, -5.4337516)
+
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_dg77c")
 
@@ -84,8 +99,24 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 1.7, -3)
 [node name="ceiling2" parent="NavigationRegion3D" instance=ExtResource("7_efxa6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 1.7, -3)
 
-[node name="Enemy" parent="." instance=ExtResource("8_5vw27")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.005581, 1.9206781, -4.3261347)
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
 
-[node name="Enemy2" parent="." instance=ExtResource("8_5vw27")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.070076, 2, -2.4381335)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.335297, 0.9832258, -3.3828125)
+shape = SubResource("BoxShape3D_5vw27")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.251627, 5.512536, -9.8841505)
+shape = SubResource("BoxShape3D_kek77")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.251627, 5.512536, 2.9753466)
+shape = SubResource("BoxShape3D_kek77")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.902084, 4.289582, 1.5304832)
+shape = SubResource("BoxShape3D_4c57u")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.902084, 4.289582, -8.259658)
+shape = SubResource("BoxShape3D_4c57u")
