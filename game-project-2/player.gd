@@ -3,7 +3,6 @@ extends CharacterBody3D
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 
-
 # Health variables
 @export var max_health: int = 50 # Max health
 var health: int = 50  # Current health
@@ -43,13 +42,15 @@ func _physics_process(delta: float) -> void:
 # dammage receive
 func take_damage(amount: int):
 	health -= amount
-	if health < 0:
-		health = 0
+	if health <= 0:
+		game_over()
 	update_health_ui()
 	
 # empty game over till we get something to display on game over
 func game_over():
-	pass
+	var game_over_screen = get_tree().current_scene.get_node("GameOverScreen") 
+	if game_over_screen and game_over_screen.has_method("show_game_over"):
+		game_over_screen.show_game_over()
 # Function to update the text in the label
 func update_health_ui():
 	health_label.text = "Health: %d/%d" % [health, max_health]

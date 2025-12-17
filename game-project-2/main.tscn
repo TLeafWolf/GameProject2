@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cdv48fwvkumik"]
+[gd_scene load_steps=22 format=3 uid="uid://cdv48fwvkumik"]
 
 [ext_resource type="ArrayMesh" uid="uid://bcnliylecdrk1" path="res://PlaceHolders/obj/dirt_with_grass.obj" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://cniym77vlahk5" path="res://player.tscn" id="2_0xm2m"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://busx538pxchxl" path="res://Assests3dModel/EnviromentModels/wall.blend" id="6_4c57u"]
 [ext_resource type="PackedScene" uid="uid://bdiokwlb53sj7" path="res://Assests3dModel/EnviromentModels/ceiling.blend" id="7_efxa6"]
 [ext_resource type="PackedScene" uid="uid://sac4j2p8rvso" path="res://enemy.tscn" id="8_5vw27"]
+[ext_resource type="Script" uid="uid://bdu0omd3aw4g6" path="res://cutscene_layer.gd" id="9_kek77"]
+[ext_resource type="Script" uid="uid://dltrj4q8ds2n5" path="res://game_over_screen.gd" id="10_4c57u"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ig7tw"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -47,6 +49,12 @@ size = Vector3(12.669922, 9.878052, 1.980957)
 [sub_resource type="BoxShape3D" id="BoxShape3D_4c57u"]
 size = Vector3(2.2574615, 4.9941406, 5.312561)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5vw27"]
+bg_color = Color(0.5499392, 0.61939096, 0.5912887, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kek77"]
+bg_color = Color(1.2032687e-07, 0.64711, 0.19402054, 1)
+
 [node name="main" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -63,13 +71,13 @@ data = {
 }
 
 [node name="Player" parent="." instance=ExtResource("2_0xm2m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.77576804, 3, -1.8421049)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.77576804, 3, -3.4622736)
 
 [node name="Camera3D" type="Camera3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 0.9156205, 0.40204367, 0, -0.40204367, 0.9156205, -0.18501902, 2.356316, 3.5803232)
+transform = Transform3D(-4.371139e-08, 0.40194777, -0.9156626, 0, 0.9156626, 0.40194777, 1, 1.7569695e-08, -4.0024883e-08, -4.1938653, 1.6866126, 1.0804913)
 
 [node name="HealthLabel" type="Label3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.064903975, 1.4475584, 1.2564569)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -1.8716586, 1.3900647, 0.60138154)
 font_size = 64
 
 [node name="Enemy" parent="." instance=ExtResource("8_5vw27")]
@@ -120,3 +128,93 @@ shape = SubResource("BoxShape3D_4c57u")
 [node name="CollisionShape3D5" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.902084, 4.289582, -8.259658)
 shape = SubResource("BoxShape3D_4c57u")
+
+[node name="CutsceneLayer" type="CanvasLayer" parent="."]
+script = ExtResource("9_kek77")
+
+[node name="Panel" type="Panel" parent="CutsceneLayer"]
+offset_right = 1151.0
+offset_bottom = 647.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_5vw27")
+
+[node name="Label" type="Label" parent="CutsceneLayer"]
+offset_left = -1.0
+offset_top = 28.0
+offset_right = 1147.0
+offset_bottom = 224.0
+theme_override_font_sizes/font_size = 100
+text = "Dentures and Treasure"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="CutsceneLayer"]
+offset_left = 431.0
+offset_top = 502.0
+offset_right = 710.0
+offset_bottom = 579.0
+theme_override_font_sizes/font_size = 50
+text = "Play game"
+
+[node name="VictoryScreen" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Panel" type="Panel" parent="VictoryScreen"]
+offset_right = 1148.0
+offset_bottom = 647.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_kek77")
+
+[node name="Label" type="Label" parent="VictoryScreen"]
+offset_right = 1151.0
+offset_bottom = 165.0
+theme_override_font_sizes/font_size = 175
+text = "YOU WON"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="VictoryScreen"]
+offset_left = 71.0
+offset_top = 261.0
+offset_right = 1083.0
+offset_bottom = 470.0
+theme_override_font_sizes/font_size = 75
+text = "Old Man: HEY THERE'S A CRACK IN MY GLASSES! D:<"
+autowrap_mode = 2
+
+[node name="Button" type="Button" parent="VictoryScreen"]
+offset_left = 433.0
+offset_top = 506.0
+offset_right = 709.0
+offset_bottom = 582.0
+theme_override_font_sizes/font_size = 50
+text = "Play Again"
+
+[node name="GameOverScreen" type="CanvasLayer" parent="."]
+visible = false
+script = ExtResource("10_4c57u")
+
+[node name="Panel" type="Panel" parent="GameOverScreen"]
+offset_right = 1148.0
+offset_bottom = 647.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_kek77")
+
+[node name="Label" type="Label" parent="GameOverScreen"]
+offset_right = 1151.0
+offset_bottom = 240.0
+theme_override_font_sizes/font_size = 175
+text = "GAME OVER"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="GameOverScreen"]
+offset_left = 71.0
+offset_top = 261.0
+offset_right = 1083.0
+offset_bottom = 470.0
+theme_override_font_sizes/font_size = 75
+text = "Old Man: Dang kids getting killed by goblins these days!"
+autowrap_mode = 2
+
+[node name="Button" type="Button" parent="GameOverScreen"]
+offset_left = 432.0
+offset_top = 505.0
+offset_right = 710.0
+offset_bottom = 576.0
+theme_override_font_sizes/font_size = 50
+text = "Retry!"
