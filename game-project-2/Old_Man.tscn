@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://uwbhsk0wg0tx"]
+
+[ext_resource type="PackedScene" uid="uid://62e0rkdxdi2n" path="res://OldMan.blend" id="1_hw15k"]
+[ext_resource type="Script" uid="uid://doxit2k62f1wg" path="res://old_man.gd" id="2_2lcyv"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_2lcyv"]
+radius = 0.49267578
+height = 2.3510742
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5rhbs"]
+size = Vector3(7.377594, 2.9559937, 5.101082)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="OldMan" parent="." instance=ExtResource("1_hw15k")]
+script = ExtResource("2_2lcyv")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="OldMan"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.18615568, 1.1048446, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OldMan"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.22109699, 1.1328117, -0.01239115)
+shape = SubResource("CapsuleShape3D_2lcyv")
+
+[node name="Area3D" type="Area3D" parent="OldMan"]
+collision_layer = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OldMan/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.28318787, 1.1729853, 0.055583954)
+shape = SubResource("BoxShape3D_5rhbs")
+
+[node name="Label3D" type="Label3D" parent="OldMan"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.32281673, 1.1698661, -0.09428573)
+billboard = 1
+text = "\"Press E to talk\""
+
+[connection signal="body_entered" from="OldMan/Area3D" to="OldMan" method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="OldMan/Area3D" to="OldMan" method="_on_area_3d_body_exited"]
