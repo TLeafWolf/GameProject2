@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://cdv48fwvkumik"]
+[gd_scene load_steps=23 format=3 uid="uid://cdv48fwvkumik"]
 
 [ext_resource type="ArrayMesh" uid="uid://bcnliylecdrk1" path="res://PlaceHolders/obj/dirt_with_grass.obj" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://cniym77vlahk5" path="res://player.tscn" id="2_0xm2m"]
@@ -52,8 +52,11 @@ size = Vector3(2.2574615, 4.9941406, 5.312561)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5vw27"]
 bg_color = Color(0.5499392, 0.61939096, 0.5912887, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4c57u"]
+bg_color = Color(2.3102762e-06, 0.7152381, 0.41123885, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kek77"]
-bg_color = Color(1.2032687e-07, 0.64711, 0.19402054, 1)
+bg_color = Color(1, 0, 0.2627451, 1)
 
 [node name="main" type="Node3D"]
 
@@ -158,9 +161,9 @@ text = "Play game"
 visible = false
 
 [node name="Panel" type="Panel" parent="VictoryScreen"]
-offset_right = 1148.0
-offset_bottom = 647.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_kek77")
+offset_right = 1149.0
+offset_bottom = 649.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_4c57u")
 
 [node name="Label" type="Label" parent="VictoryScreen"]
 offset_right = 1151.0
