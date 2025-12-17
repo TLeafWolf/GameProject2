@@ -74,13 +74,13 @@ data = {
 }
 
 [node name="Player" parent="." instance=ExtResource("2_0xm2m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.77576804, 3, -3.4622736)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.9583879, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Player"]
-transform = Transform3D(-4.371139e-08, 0.40194777, -0.9156626, 0, 0.9156626, 0.40194777, 1, 1.7569695e-08, -4.0024883e-08, -4.1938653, 1.6866126, 1.0804913)
+transform = Transform3D(1, 0, 0, 0, 0.9156626, 0.40194777, 0, -0.40194777, 0.9156626, -0.26920986, 1.6866126, 2.5129666)
 
 [node name="HealthLabel" type="Label3D" parent="Player"]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -1.8716586, 1.3900647, 0.60138154)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2557224, 1.3900647, 0.60138154)
 font_size = 64
 
 [node name="Enemy" parent="." instance=ExtResource("8_5vw27")]
