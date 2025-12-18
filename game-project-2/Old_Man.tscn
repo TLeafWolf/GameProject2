@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://uwbhsk0wg0tx"]
 
-[ext_resource type="PackedScene" uid="uid://62e0rkdxdi2n" path="res://OldMan.blend" id="1_hw15k"]
+[ext_resource type="PackedScene" uid="uid://bnxbt2xsavcd" path="res://OldMan.blend" id="1_hw15k"]
 [ext_resource type="Script" uid="uid://doxit2k62f1wg" path="res://old_man.gd" id="2_2lcyv"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_2lcyv"]
@@ -19,7 +19,7 @@ script = ExtResource("2_2lcyv")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.18615568, 1.1048446, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="OldMan"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.22109699, 1.1328117, -0.01239115)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.22109699, 1.1328117, -0.01239109)
 shape = SubResource("CapsuleShape3D_2lcyv")
 
 [node name="Area3D" type="Area3D" parent="OldMan"]

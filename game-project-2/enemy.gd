@@ -1,21 +1,27 @@
 extends CharacterBody3D
 
 @onready var nav: NavigationAgent3D = $NavigationAgent3D
-@onready var player: CharacterBody3D = $"../Player"
+@onready var player: CharacterBody3D =  null
 
 const SPEED = 3.0
 const STOP_DISTANCE = 0.1
 var angry = false
+func _ready():
+	player = get_tree().get_first_node_in_group("player")
+	if not player:
+		push_error("Player node not found! Check the path.")
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if !angry:
 		return
 	
 	# rotate to player
-	look_at(player.position)
-	rotation.x = 0
-	rotation.y += 3.14159
-	rotation.z = 0
+	if player:
+		var target_pos = player.global_position
+		target_pos.y = global_position.y  # keep rotation horizontal only
+		look_at(target_pos, Vector3.UP)
+		 # Update navigation target
+		nav.set_target_position(player.global_position)
 	
 	if nav.is_navigation_finished():
 		velocity = Vector3.ZERO

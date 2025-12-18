@@ -1,7 +1,7 @@
-[gd_scene load_steps=24 format=3 uid="uid://cdv48fwvkumik"]
+[gd_scene load_steps=25 format=3 uid="uid://cdv48fwvkumik"]
 
 [ext_resource type="ArrayMesh" uid="uid://bcnliylecdrk1" path="res://PlaceHolders/obj/dirt_with_grass.obj" id="1_ig7tw"]
-[ext_resource type="PackedScene" uid="uid://cniym77vlahk5" path="res://player.tscn" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://bsarpd1iw8wt1" path="res://player.tscn" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://cwspt7ouw8qg7" path="res://Assests3dModel/EnviromentModels/floor.blend" id="3_272bh"]
 [ext_resource type="PackedScene" uid="uid://bg1bp42kw5j3h" path="res://Assests3dModel/EnviromentModels/doorway.blend" id="4_5vw27"]
 [ext_resource type="PackedScene" uid="uid://bavthgqwclwsx" path="res://Assests3dModel/EnviromentModels/wall2.blend" id="5_kek77"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://bdu0omd3aw4g6" path="res://cutscene_layer.gd" id="9_kek77"]
 [ext_resource type="Script" uid="uid://dltrj4q8ds2n5" path="res://game_over_screen.gd" id="10_4c57u"]
 [ext_resource type="PackedScene" uid="uid://uwbhsk0wg0tx" path="res://Old_Man.tscn" id="11_efxa6"]
+[ext_resource type="PackedScene" path="res://ui.tscn" id="12_dg77c"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ig7tw"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -74,15 +75,8 @@ data = {
 "cells": PackedInt32Array(65535, 65535, 0, 65535, 0, 0, 65535, 1, 0, 0, 1, 0, 1, 1, 0, 2, 1, 0, 3, 1, 0, 4, 1, 0, 4, 0, 0, 4, 65535, 0, 4, 65534, 0, 4, 65533, 0, 4, 65532, 0, 4, 65531, 0, 4, 65530, 0, 3, 65530, 0, 2, 65530, 0, 1, 65530, 0, 1, 65531, 0, 0, 65531, 0, 65535, 65531, 0, 65535, 65532, 0, 65534, 65532, 0, 65534, 65531, 0, 65534, 65533, 0, 65534, 65534, 0, 65534, 65535, 0, 65534, 0, 0, 65534, 1, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 3, 65535, 0, 2, 65535, 0, 1, 65535, 0, 0, 65535, 0, 65535, 65534, 0, 0, 65534, 0, 1, 65534, 0, 2, 65534, 0, 3, 65534, 0, 3, 65533, 0, 3, 65532, 0, 3, 65531, 0, 2, 65531, 0, 0, 65530, 0, 65535, 65530, 0, 65534, 65530, 0, 0, 65532, 0, 1, 65532, 0, 2, 65532, 0, 2, 65533, 0, 1, 65533, 0, 0, 65533, 0, 65535, 65533, 0)
 }
 
-[node name="Player" parent="." instance=ExtResource("2_0xm2m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.9583879, 0)
-
-[node name="Camera3D" type="Camera3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 0.9156626, 0.40194777, 0, -0.40194777, 0.9156626, -0.26920986, 1.6866126, 2.5129666)
-
-[node name="HealthLabel" type="Label3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2557224, 1.3900647, 0.60138154)
-font_size = 64
+[node name="player" parent="." instance=ExtResource("2_0xm2m")]
+transform = Transform3D(1.0450001, 0, 0, 0, 1.045, 0, 0, 0, 1.0450001, -0.21622539, 4.244415, 0.009619743)
 
 [node name="Enemy" parent="." instance=ExtResource("8_5vw27")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.092524, 2.5613246, -3.6705592)
@@ -224,4 +218,6 @@ theme_override_font_sizes/font_size = 50
 text = "Retry!"
 
 [node name="Node3D" parent="." instance=ExtResource("11_efxa6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0444965, 2.0497227, -10.208377)
+transform = Transform3D(0.013141925, 0, -0.99991363, 0, 1, 0, 0.99991363, 0, 0.013141925, 0, 2.1492195, -10.311467)
+
+[node name="UI" parent="." instance=ExtResource("12_dg77c")]

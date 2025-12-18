@@ -1,22 +1,45 @@
 extends CharacterBody3D
-
+var can_move: bool = true
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
+var yaw := 0.0   # horizontal rotation
+var pitch := 0.0 # vertical rotation
 
+@onready var hud := get_tree().get_first_node_in_group("UI")
+@onready var camera = $Camera3D
 # Health variables
 @export var max_health: int = 50 # Max health
+@export var mouse_sensitivity: float = 0.1
 var health: int = 50  # Current health
 
-# 3D Label
-@onready var health_label: Label3D = $HealthLabel  # Assuming your 3D Label is named "HealthLabel"
-
 func _ready():
-	# Initialize the health text
-	health_label.text = "Health: %d/%d" % [health, max_health]
+	
+	camera.current = true
+	print("HUD node found:", hud)
+	if hud:
+		hud.call_deferred("update_health", health, max_health)
+		print("ERROR: HUD node not found! Make sure it exists and is in group 'UI'.")
 
-func _process(delta):
-	# Only update health display
-	health_label.text = "Health: %d/%d" % [health, max_health]
+func _process(_delta):
+	if Input.get_mouse_mode() != Input.MOUSE_MODE_CAPTURED:
+		return
+
+func _input(event):
+	if Input.get_mouse_mode() != Input.MOUSE_MODE_CAPTURED:
+		return
+	if event is InputEventMouseMotion:
+		yaw -= event.relative.x * mouse_sensitivity
+		pitch -= event.relative.y * mouse_sensitivity
+		pitch = clamp(pitch, -90, 90)  # prevent flipping upside down
+
+		# Rotate player horizontally (yaw)
+		rotation_degrees.y = yaw
+
+		# Rotate camera vertically (pitch)
+		$Camera3D.rotation_degrees.x = pitch
+	if Input.is_action_just_pressed("cancel_mouse"):
+		if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 func _physics_process(delta: float) -> void:
 	# Add gravity.
@@ -28,29 +51,39 @@ func _physics_process(delta: float) -> void:
 		velocity.y = JUMP_VELOCITY
 
 	# Get input direction and move player
-	var input_dir := Input.get_vector("left", "right", "forward", "back")
-	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	if direction:
-		velocity.x = direction.x * SPEED
-		velocity.z = direction.z * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.z = move_toward(velocity.z, 0, SPEED)
+	var forward = -transform.basis.z
+	var right = transform.basis.x
+	var input_dir = Vector3.ZERO
+
+	if Input.is_action_pressed("forward"):
+		input_dir += forward
+	if Input.is_action_pressed("back"):
+		input_dir -= forward
+	if Input.is_action_pressed("right"):
+		input_dir += right
+	if Input.is_action_pressed("left"):
+		input_dir -= right
+
+	input_dir = input_dir.normalized()
+	velocity.x = input_dir.x * SPEED
+	velocity.z = input_dir.z * SPEED
 
 	move_and_slide()
 
 # dammage receive
 func take_damage(amount: int):
 	health -= amount
-	if health <= 0:
+	health = max(health, 0)
+	if hud:
+		hud.update_health(health, max_health)
+	if health == 0:
 		game_over()
-	update_health_ui()
-	
+
 # empty game over till we get something to display on game over
 func game_over():
-	var game_over_screen = get_tree().current_scene.get_node("GameOverScreen") 
-	if game_over_screen and game_over_screen.has_method("show_game_over"):
-		game_over_screen.show_game_over()
-# Function to update the text in the label
-func update_health_ui():
-	health_label.text = "Health: %d/%d" % [health, max_health]
+	if GameState.old_man_state == 1:
+		GameState.player_died_after_quest = true
+	# Simple respawn
+	health = max_health
+	global_position = Vector3.ZERO
+	hud.update_health(health, max_health)
