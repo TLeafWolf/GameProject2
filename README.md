@@ -41,7 +41,7 @@ Ensure smooth interaction between the main character and the game world.
 
 ## NPCs & MOBs (Aaron Thomas Roberts)
 
-Design at least one NPCs with meaningful interactions (dialogue, item exchange, etc.).
+Design at least one NPCs with meaningful interactions (dialogue, item exchange, etc.). (done?)
 
 Program at least two MOBs with non-random behaviors (e.g., patrolling, attacking, reacting to the player). (done?)
 
@@ -51,13 +51,13 @@ Implement AI navigation so the NPC and MOBs respond dynamically to the environme
 
 Use vectors to control movement, acceleration, and forces applied to objects. (done?)
 
-Create an event that triggers based on the player’s actions and occurs some distance away from them.
+Create an event that triggers based on the player’s actions and occurs some distance away from them. (done?)
 
 ## Level Design & Navigation (Teresa Newman, Aaron Thomas Roberts, Devon Sabody)
 
 Develop at least one full playable level that includes:
 
-A structured environment with interactive elements.
+A structured environment with interactive elements. (done?)
 
 A Navigation Mesh Agent for AI characters to move intelligently. (done?)
 
