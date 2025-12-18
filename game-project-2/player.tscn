@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://bsarpd1iw8wt1"]
+[gd_scene load_steps=3 format=3 uid="uid://cniym77vlahk5"]
 
 [ext_resource type="Script" uid="uid://c4cgpp5x7klhq" path="res://player.gd" id="1_onrkg"]
 
@@ -6,7 +6,7 @@
 size = Vector3(1.2240143, 1.8046875, 1.1732559)
 
 [node name="Player" type="CharacterBody3D" groups=["player"]]
-transform = Transform3D(1.0450001, 0, 0, 0, 1.045, 0, 0, 0, 1.0450001, -0.21622539, 0.0801605, 0.009619743)
+transform = Transform3D(1.045, 0, 0, 0, 1.045, 0, 0, 0, 1.045, -0.21622539, 0.0801605, 0.009619743)
 disable_mode = 2
 script = ExtResource("1_onrkg")
 
@@ -15,5 +15,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.16488853, 0.44622886, 0.003
 shape = SubResource("BoxShape3D_4flbx")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.9569378, 0, 0, 0, 0.95693785, 0, 0, 0, 0.9569378, 0.13830441, 0.72781754, -0.12396985)
+transform = Transform3D(0.95693785, 0, 0, 0, 0.95693785, 0, 0, 0, 0.95693785, 0.13830441, 0.72781754, -0.12396985)
 fov = 75.672615

@@ -1,5 +1,5 @@
 extends CharacterBody3D
-var can_move: bool = true
+
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 var yaw := 0.0   # horizontal rotation
@@ -13,7 +13,8 @@ var pitch := 0.0 # vertical rotation
 var health: int = 50  # Current health
 
 func _ready():
-	
+	if Input.get_mouse_mode() != Input.MOUSE_MODE_CAPTURED:
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	camera.current = true
 	print("HUD node found:", hud)
 	if hud:
@@ -21,12 +22,9 @@ func _ready():
 		print("ERROR: HUD node not found! Make sure it exists and is in group 'UI'.")
 
 func _process(_delta):
-	if Input.get_mouse_mode() != Input.MOUSE_MODE_CAPTURED:
-		return
+	pass
 
 func _input(event):
-	if Input.get_mouse_mode() != Input.MOUSE_MODE_CAPTURED:
-		return
 	if event is InputEventMouseMotion:
 		yaw -= event.relative.x * mouse_sensitivity
 		pitch -= event.relative.y * mouse_sensitivity
@@ -84,6 +82,6 @@ func game_over():
 	if GameState.old_man_state == 1:
 		GameState.player_died_after_quest = true
 	# Simple respawn
-	var game_over_screen = get_tree().current_scene.get_node("GameOverScreen") 
-	if game_over_screen and game_over_screen.has_method("show_game_over"):
-		game_over_screen.show_game_over()
+	health = max_health
+	global_position = Vector3.ZERO
+	hud.update_health(health, max_health)
