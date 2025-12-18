@@ -37,7 +37,7 @@ Create a main character with animations and proper collider setup.(done)
 
 Map input controls to movement using Godot's Input System.(done)
 
-Ensure smooth interaction between the main character and the game world.
+Ensure smooth interaction between the main character and the game world.(done)
 
 ## NPCs & MOBs (Aaron Thomas Roberts)
 
@@ -61,4 +61,4 @@ A structured environment with interactive elements. (done)
 
 A Navigation Mesh Agent for AI characters to move intelligently. (done)
 
-A cutscene before the level begins and one at the end of the level (both success and failure endings).
+A cutscene before the level begins and one at the end of the level (both success and failure endings). (done)
