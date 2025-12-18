@@ -84,6 +84,6 @@ func game_over():
 	if GameState.old_man_state == 1:
 		GameState.player_died_after_quest = true
 	# Simple respawn
-	health = max_health
-	global_position = Vector3.ZERO
-	hud.update_health(health, max_health)
+	var game_over_screen = get_tree().current_scene.get_node("GameOverScreen") 
+	if game_over_screen and game_over_screen.has_method("show_game_over"):
+		game_over_screen.show_game_over()

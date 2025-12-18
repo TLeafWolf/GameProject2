@@ -11,7 +11,7 @@
 [ext_resource type="Script" uid="uid://bdu0omd3aw4g6" path="res://cutscene_layer.gd" id="9_kek77"]
 [ext_resource type="Script" uid="uid://dltrj4q8ds2n5" path="res://game_over_screen.gd" id="10_4c57u"]
 [ext_resource type="PackedScene" uid="uid://uwbhsk0wg0tx" path="res://Old_Man.tscn" id="11_efxa6"]
-[ext_resource type="PackedScene" path="res://ui.tscn" id="12_dg77c"]
+[ext_resource type="PackedScene" uid="uid://m36cs1q6f8oc" path="res://ui.tscn" id="12_dg77c"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ig7tw"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -127,6 +127,8 @@ shape = SubResource("BoxShape3D_4c57u")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.902084, 4.289582, -8.259658)
 shape = SubResource("BoxShape3D_4c57u")
 
+[node name="UI" parent="." instance=ExtResource("12_dg77c")]
+
 [node name="CutsceneLayer" type="CanvasLayer" parent="."]
 script = ExtResource("9_kek77")
 
@@ -184,6 +186,13 @@ offset_bottom = 582.0
 theme_override_font_sizes/font_size = 50
 text = "Play Again"
 
+[node name="Label4" type="Label" parent="VictoryScreen"]
+offset_left = 436.0
+offset_top = 595.0
+offset_right = 754.0
+offset_bottom = 639.0
+text = "Press Esc key to bring back mouse cursor"
+
 [node name="GameOverScreen" type="CanvasLayer" parent="."]
 visible = false
 script = ExtResource("10_4c57u")
@@ -217,7 +226,12 @@ offset_bottom = 576.0
 theme_override_font_sizes/font_size = 50
 text = "Retry!"
 
+[node name="Label3" type="Label" parent="GameOverScreen"]
+offset_left = 436.0
+offset_top = 595.0
+offset_right = 754.0
+offset_bottom = 639.0
+text = "Press Esc to bring back mouse cursor"
+
 [node name="Node3D" parent="." instance=ExtResource("11_efxa6")]
 transform = Transform3D(0.013141925, 0, -0.99991363, 0, 1, 0, 0.99991363, 0, 0.013141925, 0, 2.1492195, -10.311467)
-
-[node name="UI" parent="." instance=ExtResource("12_dg77c")]
