@@ -33,7 +33,7 @@ Traps
  
 ## Main Character & Controls (Teresa Newman)
 
-Create a main character with animations and proper collider setup.
+Create a main character with animations and proper collider setup.(done)
 
 Map input controls to movement using Godot's Input System.(done)
 
