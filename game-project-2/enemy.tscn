@@ -12,7 +12,7 @@ height = 2.5
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_4gyqm"]
 radius = 5.4853516
 
-[node name="Enemy" type="CharacterBody3D"]
+[node name="Enemy" type="CharacterBody3D" groups=["enemy"]]
 transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 0)
 script = ExtResource("1_4gyqm")
 

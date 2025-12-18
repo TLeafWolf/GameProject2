@@ -6,6 +6,8 @@ extends CharacterBody3D
 const SPEED = 3.0
 const STOP_DISTANCE = 0.1
 var angry = false
+var health = 4
+
 func _ready():
 	player = get_tree().get_first_node_in_group("player")
 	if not player:
@@ -61,3 +63,11 @@ func _on_attack_timer_timeout() -> void:
 func _on_aggro_range_entered(body: Node3D) -> void:
 	if body.is_in_group("player"):
 		angry = true
+
+func hurt():
+	health -= 1
+	if health <= 0:
+		die()
+
+func die():
+	self.queue_free()

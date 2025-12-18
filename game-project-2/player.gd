@@ -4,6 +4,8 @@ const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 var yaw := 0.0   # horizontal rotation
 var pitch := 0.0 # vertical rotation
+var can_move: bool = true
+var can_attack: bool = true
 
 @onready var hud := get_tree().get_first_node_in_group("UI")
 @onready var camera = $Camera3D
@@ -61,6 +63,8 @@ func _physics_process(delta: float) -> void:
 		input_dir += right
 	if Input.is_action_pressed("left"):
 		input_dir -= right
+	if Input.is_action_just_pressed("attack"):
+		attack()
 
 	input_dir = input_dir.normalized()
 	velocity.x = input_dir.x * SPEED
@@ -85,3 +89,15 @@ func game_over():
 	health = max_health
 	global_position = Vector3.ZERO
 	hud.update_health(health, max_health)
+
+func attack():
+	if can_attack:
+		can_attack = false
+		$AttackTimer.start()
+		$Cane/AnimationPlayer.play("Attack")
+		for body in $Area3D.get_overlapping_bodies():
+			if body.is_in_group("enemy"):
+				body.hurt()
+
+func _on_attack_timer_timeout() -> void:
+	can_attack = true

@@ -17,10 +17,60 @@
 			"mesh":0,
 			"name":"Cylinder",
 			"rotation":[
-				0.7071068286895752,
+				0.6893327236175537,
+				0.1575448215007782,
+				0.157544806599617,
+				0.6893327236175537
+			],
+			"translation":[
+				0.3780723512172699,
 				0,
-				0,
-				0.7071068286895752
+				0
+			]
+		}
+	],
+	"animations":[
+		{
+			"channels":[
+				{
+					"sampler":0,
+					"target":{
+						"node":0,
+						"path":"translation"
+					}
+				},
+				{
+					"sampler":1,
+					"target":{
+						"node":0,
+						"path":"rotation"
+					}
+				},
+				{
+					"sampler":2,
+					"target":{
+						"node":0,
+						"path":"scale"
+					}
+				}
+			],
+			"name":"Block",
+			"samplers":[
+				{
+					"input":8,
+					"interpolation":"LINEAR",
+					"output":9
+				},
+				{
+					"input":10,
+					"interpolation":"STEP",
+					"output":11
+				},
+				{
+					"input":10,
+					"interpolation":"STEP",
+					"output":12
+				}
 			]
 		}
 	],
@@ -147,6 +197,48 @@
 			"componentType":5123,
 			"count":54,
 			"type":"SCALAR"
+		},
+		{
+			"bufferView":8,
+			"componentType":5126,
+			"count":10,
+			"max":[
+				0.4166666666666667
+			],
+			"min":[
+				0.041666666666666664
+			],
+			"type":"SCALAR"
+		},
+		{
+			"bufferView":9,
+			"componentType":5126,
+			"count":10,
+			"type":"VEC3"
+		},
+		{
+			"bufferView":10,
+			"componentType":5126,
+			"count":2,
+			"max":[
+				0.4166666666666667
+			],
+			"min":[
+				0.041666666666666664
+			],
+			"type":"SCALAR"
+		},
+		{
+			"bufferView":11,
+			"componentType":5126,
+			"count":2,
+			"type":"VEC4"
+		},
+		{
+			"bufferView":12,
+			"componentType":5126,
+			"count":2,
+			"type":"VEC3"
 		}
 	],
 	"bufferViews":[
@@ -197,11 +289,36 @@
 			"byteLength":108,
 			"byteOffset":9216,
 			"target":34963
+		},
+		{
+			"buffer":0,
+			"byteLength":40,
+			"byteOffset":9324
+		},
+		{
+			"buffer":0,
+			"byteLength":120,
+			"byteOffset":9364
+		},
+		{
+			"buffer":0,
+			"byteLength":8,
+			"byteOffset":9484
+		},
+		{
+			"buffer":0,
+			"byteLength":32,
+			"byteOffset":9492
+		},
+		{
+			"buffer":0,
+			"byteLength":24,
+			"byteOffset":9524
 		}
 	],
 	"buffers":[
 		{
-			"byteLength":9324,
+			"byteLength":9548,
 			"uri":"shield-c4635e3a2746e2e6ff7b117890336e34.bin"
 		}
 	]

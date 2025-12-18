@@ -1,7 +1,7 @@
-GridMap
-NavigationRegion3D
 CollisionShape3D
 Area3D
+GridMap
+NavigationRegion3D
 Timer
 CSGBox3D
 NavigationAgent3D

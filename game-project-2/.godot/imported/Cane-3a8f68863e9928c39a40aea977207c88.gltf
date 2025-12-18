@@ -16,6 +16,12 @@
 		{
 			"mesh":0,
 			"name":"Cylinder",
+			"rotation":[
+				0,
+				0,
+				-0.011494084261357784,
+				0.9999339580535889
+			],
 			"scale":[
 				0.019612986594438553,
 				0.5,
@@ -25,6 +31,51 @@
 				0,
 				0.565778374671936,
 				0
+			]
+		}
+	],
+	"animations":[
+		{
+			"channels":[
+				{
+					"sampler":0,
+					"target":{
+						"node":0,
+						"path":"translation"
+					}
+				},
+				{
+					"sampler":1,
+					"target":{
+						"node":0,
+						"path":"rotation"
+					}
+				},
+				{
+					"sampler":2,
+					"target":{
+						"node":0,
+						"path":"scale"
+					}
+				}
+			],
+			"name":"Attack",
+			"samplers":[
+				{
+					"input":8,
+					"interpolation":"LINEAR",
+					"output":9
+				},
+				{
+					"input":8,
+					"interpolation":"LINEAR",
+					"output":10
+				},
+				{
+					"input":11,
+					"interpolation":"STEP",
+					"output":12
+				}
 			]
 		}
 	],
@@ -151,6 +202,48 @@
 			"componentType":5123,
 			"count":3156,
 			"type":"SCALAR"
+		},
+		{
+			"bufferView":8,
+			"componentType":5126,
+			"count":10,
+			"max":[
+				0.4166666666666667
+			],
+			"min":[
+				0.041666666666666664
+			],
+			"type":"SCALAR"
+		},
+		{
+			"bufferView":9,
+			"componentType":5126,
+			"count":10,
+			"type":"VEC3"
+		},
+		{
+			"bufferView":10,
+			"componentType":5126,
+			"count":10,
+			"type":"VEC4"
+		},
+		{
+			"bufferView":11,
+			"componentType":5126,
+			"count":2,
+			"max":[
+				0.4166666666666667
+			],
+			"min":[
+				0.041666666666666664
+			],
+			"type":"SCALAR"
+		},
+		{
+			"bufferView":12,
+			"componentType":5126,
+			"count":2,
+			"type":"VEC3"
 		}
 	],
 	"bufferViews":[
@@ -201,11 +294,36 @@
 			"byteLength":6312,
 			"byteOffset":46240,
 			"target":34963
+		},
+		{
+			"buffer":0,
+			"byteLength":40,
+			"byteOffset":52552
+		},
+		{
+			"buffer":0,
+			"byteLength":120,
+			"byteOffset":52592
+		},
+		{
+			"buffer":0,
+			"byteLength":160,
+			"byteOffset":52712
+		},
+		{
+			"buffer":0,
+			"byteLength":8,
+			"byteOffset":52872
+		},
+		{
+			"buffer":0,
+			"byteLength":24,
+			"byteOffset":52880
 		}
 	],
 	"buffers":[
 		{
-			"byteLength":52552,
+			"byteLength":52904,
 			"uri":"Cane-3a8f68863e9928c39a40aea977207c88.bin"
 		}
 	]

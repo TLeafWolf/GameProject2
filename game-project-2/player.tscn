@@ -1,9 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://cniym77vlahk5"]
+[gd_scene load_steps=6 format=3 uid="uid://cniym77vlahk5"]
 
 [ext_resource type="Script" uid="uid://c4cgpp5x7klhq" path="res://player.gd" id="1_onrkg"]
+[ext_resource type="PackedScene" uid="uid://b6bj5jxk154gc" path="res://Assests3dModel/Cane.blend" id="2_onrkg"]
+[ext_resource type="PackedScene" uid="uid://cf8qx3b7acyf1" path="res://Assests3dModel/shield.blend" id="3_i3pqv"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4flbx"]
 size = Vector3(1.2240143, 1.8046875, 1.1732559)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_i3pqv"]
 
 [node name="Player" type="CharacterBody3D" groups=["player"]]
 transform = Transform3D(1.045, 0, 0, 0, 1.045, 0, 0, 0, 1.045, -0.21622539, 0.0801605, 0.009619743)
@@ -17,3 +21,19 @@ shape = SubResource("BoxShape3D_4flbx")
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.95693785, 0, 0, 0, 0.95693785, 0, 0, 0, 0.95693785, 0.13830441, 0.72781754, -0.12396985)
 fov = 75.672615
+
+[node name="Cane" parent="." instance=ExtResource("2_onrkg")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.8, 0, -0.8)
+
+[node name="shield" parent="." instance=ExtResource("3_i3pqv")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.5, 0, -0.8)
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -1.2)
+shape = SubResource("BoxShape3D_i3pqv")
+
+[node name="AttackTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
