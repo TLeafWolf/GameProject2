@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://cdv48fwvkumik"]
+[gd_scene load_steps=24 format=3 uid="uid://cdv48fwvkumik"]
 
 [ext_resource type="ArrayMesh" uid="uid://bcnliylecdrk1" path="res://PlaceHolders/obj/dirt_with_grass.obj" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://cniym77vlahk5" path="res://player.tscn" id="2_0xm2m"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://sac4j2p8rvso" path="res://enemy.tscn" id="8_5vw27"]
 [ext_resource type="Script" uid="uid://bdu0omd3aw4g6" path="res://cutscene_layer.gd" id="9_kek77"]
 [ext_resource type="Script" uid="uid://dltrj4q8ds2n5" path="res://game_over_screen.gd" id="10_4c57u"]
+[ext_resource type="PackedScene" uid="uid://uwbhsk0wg0tx" path="res://Old_Man.tscn" id="11_efxa6"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ig7tw"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -221,3 +222,6 @@ offset_right = 710.0
 offset_bottom = 576.0
 theme_override_font_sizes/font_size = 50
 text = "Retry!"
+
+[node name="Node3D" parent="." instance=ExtResource("11_efxa6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0444965, 2.0497227, -10.208377)
