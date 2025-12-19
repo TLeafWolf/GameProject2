@@ -5,6 +5,10 @@ var player: Node3D = null
 @onready var interact_area = $Area3D
 @onready var label = $Label3D
 
+# barrel gag
+@onready var ClosedBarrel = $"../../Barrel"
+@onready var OpenBarrel = $"../../BarrelOfCanes"
+
 var player_in_range := false
 var dialogue_index := -1 # Track dialogue progression
 var dialogue_lines: Array = []
@@ -31,6 +35,12 @@ enum NPCState { INTRO, QUEST_GIVEN, PLAYER_DIED, CANE_GIVEN }
 func _ready():
 	label.text = ""
 	label.visible = false
+	if GameState.weapons == false:
+		ClosedBarrel.visible = true
+		OpenBarrel.visible = false
+	else:
+		ClosedBarrel.visible = false
+		OpenBarrel.visible = true
 
 func _process(_delta):
 	if player_in_range and Input.is_action_just_pressed("Interact"):
@@ -54,7 +64,9 @@ func interact():
 	# Check if the dialogue is the after_death_dialogue and finished
 	if dialogue_lines == after_death_dialogue and dialogue_index == after_death_dialogue.size():
 		GameState.weapons = true  # Unlock weapons
-
+		#barrels
+		ClosedBarrel.visible = false
+		OpenBarrel.visible = true
 
 
 	dialogue_index = -1  # Reset the dialogue index for future interactions
@@ -63,10 +75,12 @@ func interact():
 	match GameState.old_man_state:
 		NPCState.INTRO:
 			GameState.old_man_state = NPCState.QUEST_GIVEN
+
 		NPCState.QUEST_GIVEN:
 			if GameState.player_died_after_quest:
 				GameState.old_man_state = NPCState.CANE_GIVEN
 				GameState.player_died_after_quest = false
+
 	label.text = prompt_text
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	print("Body entered:", body.name)
@@ -79,6 +93,7 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 		match GameState.old_man_state:
 			NPCState.INTRO:
 				dialogue_lines = intro_dialogue
+				
 			NPCState.QUEST_GIVEN:
 				if GameState.player_died_after_quest:
 					dialogue_lines = after_death_dialogue  # Only use after_death_dialogue if player died

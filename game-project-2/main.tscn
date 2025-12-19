@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://cdv48fwvkumik"]
+[gd_scene load_steps=31 format=3 uid="uid://cdv48fwvkumik"]
 
 [ext_resource type="ArrayMesh" uid="uid://bcnliylecdrk1" path="res://PlaceHolders/obj/dirt_with_grass.obj" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://cniym77vlahk5" path="res://player.tscn" id="2_0xm2m"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://m36cs1q6f8oc" path="res://ui.tscn" id="12_dg77c"]
 [ext_resource type="PackedScene" uid="uid://dnsjh36s2df44" path="res://Assests3dModel/stand_w_glasses.blend" id="13_ycdy4"]
 [ext_resource type="PackedScene" uid="uid://bm00wr5nbheay" path="res://Assests3dModel/Barrel.blend" id="15_vivmo"]
+[ext_resource type="PackedScene" uid="uid://uafls33fnedv" path="res://Assests3dModel/BarrelOfCanes.blend" id="16_2cqfq"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ig7tw"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -279,7 +280,12 @@ transform = Transform3D(0.5419885, 0, 0, 0, 2.4267163, 0, 0, 0, 1.350884, 21.675
 shape = SubResource("BoxShape3D_ycdy4")
 
 [node name="Barrel" parent="." instance=ExtResource("15_vivmo")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.047389, -0.19484997, -11.167442)
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -1.047389, -0.31793475, -11.167442)
+visible = false
+
+[node name="BarrelOfCanes" parent="." instance=ExtResource("16_2cqfq")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -1.047, -0.318, -11.167)
+visible = false
 
 [connection signal="body_entered" from="Goal" to="VictoryScreen" method="_on_goal_body_entered"]
 
