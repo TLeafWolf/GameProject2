@@ -72,8 +72,11 @@ func _physics_process(delta: float) -> void:
 		input_dir += right
 	if Input.is_action_pressed("left"):
 		input_dir -= right
-	if Input.is_action_just_pressed("attack"):
+	if Input.is_action_just_pressed("attack") and GameState.weapons:
 		attack()
+
+	if Input.is_action_pressed("block") and GameState.weapons:
+		block()
 
 	input_dir = input_dir.normalized()
 	velocity.x = input_dir.x * SPEED
@@ -112,6 +115,9 @@ func attack():
 		for body in $Area3D.get_overlapping_bodies():
 			if body.is_in_group("enemy"):
 				body.hurt()
+
+func block():
+	$shield/AnimationPlayer.play("Block")
 
 func _on_attack_timer_timeout() -> void:
 	can_attack = true

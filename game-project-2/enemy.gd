@@ -58,16 +58,20 @@ func _on_attack_box_exited(body: Node3D) -> void:
 
 func _on_attack_timer_timeout() -> void:
 	$Goblin/AnimationPlayer.play("Cylinder_003Action")
-	player.take_damage(5)
+	if Input.is_action_pressed("block") and GameState.weapons:
+		player.take_damage(1)
+	else:
+		player.take_damage(5)
 
 func _on_aggro_range_entered(body: Node3D) -> void:
 	if body.is_in_group("player"):
 		angry = true
 
 func hurt():
-	health -= 1
-	if health <= 0:
-		die()
+	if GameState.weapons:
+		health -= 1
+		if health <= 0:
+			die()
 
 func die():
 	self.queue_free()
