@@ -1,13 +1,12 @@
 extends Node3D
 
-
 var player: Node3D = null
 
 @onready var interact_area = $Area3D
 @onready var label = $Label3D
 
 var player_in_range := false
-var dialogue_index := -1
+var dialogue_index := -1 # Track dialogue progression
 var dialogue_lines: Array = []
 
 enum NPCState { INTRO, QUEST_GIVEN, PLAYER_DIED, CANE_GIVEN }
@@ -23,7 +22,7 @@ enum NPCState { INTRO, QUEST_GIVEN, PLAYER_DIED, CANE_GIVEN }
 @export var after_death_dialogue := [
 	"Back already?",
 	"I would've thought you brought something.",
-    "Fine. Take my cane and this... uh... lid."
+	"Fine. Take my cane and this... uh... lid."  # This line will unlock the weapons
 ]
 
 @export var quest_reminder := ["Hurry up. Those glasses are important."]
@@ -33,8 +32,6 @@ func _ready():
 	label.text = ""
 	label.visible = false
 
-
-
 func _process(_delta):
 	if player_in_range and Input.is_action_just_pressed("Interact"):
 		interact()
@@ -42,9 +39,9 @@ func _process(_delta):
 		var target_pos = player.global_position
 		var my_pos = global_position
 
-		target_pos.y = my_pos.y  # keep rotation horizontal only
+		target_pos.y = my_pos.y  # Keep rotation horizontal only
 		look_at(target_pos, Vector3.UP)
-		rotation.y += deg_to_rad(90) # keep your fix
+		rotation.y += deg_to_rad(90)  # Keep your fix
 
 func interact():
 	# Start dialogue
@@ -54,8 +51,13 @@ func interact():
 		label.text = dialogue_lines[dialogue_index]
 		return
 
-	# Dialogue finished
-	dialogue_index = -1
+	# Check if the dialogue is the after_death_dialogue and finished
+	if dialogue_lines == after_death_dialogue and dialogue_index == after_death_dialogue.size():
+		GameState.weapons = true  # Unlock weapons
+
+
+
+	dialogue_index = -1  # Reset the dialogue index for future interactions
 
 	# Update NPC state
 	match GameState.old_man_state:
@@ -63,19 +65,15 @@ func interact():
 			GameState.old_man_state = NPCState.QUEST_GIVEN
 		NPCState.QUEST_GIVEN:
 			if GameState.player_died_after_quest:
-				# give_player_cane_and_shield()
 				GameState.old_man_state = NPCState.CANE_GIVEN
 				GameState.player_died_after_quest = false
-
-	# Show prompt again
 	label.text = prompt_text
-
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	print("Body entered:", body.name)
 	if body.is_in_group("player"):
 		player = body
 		player_in_range = true
-		dialogue_index = -1
+		dialogue_index = -1  # Reset dialogue index when player enters
 
 		# Select dialogue lines based on state
 		match GameState.old_man_state:
@@ -83,7 +81,7 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 				dialogue_lines = intro_dialogue
 			NPCState.QUEST_GIVEN:
 				if GameState.player_died_after_quest:
-					dialogue_lines = after_death_dialogue
+					dialogue_lines = after_death_dialogue  # Only use after_death_dialogue if player died
 				else:
 					dialogue_lines = quest_reminder
 			NPCState.CANE_GIVEN:
@@ -98,6 +96,6 @@ func _on_area_3d_body_exited(body: Node3D) -> void:
 	if body.is_in_group("player"):
 		player = null
 		player_in_range = false
-		dialogue_index = -1
+		dialogue_index = -1  # Reset dialogue index when player leaves area
 		label.visible = false
 		print("Player left interaction area!")  # Debug

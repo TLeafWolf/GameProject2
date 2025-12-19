@@ -13,7 +13,9 @@ var can_attack: bool = true
 @export var max_health: int = 50 # Max health
 @export var mouse_sensitivity: float = 0.1
 var health: int = 50  # Current health
-
+#cane and sheild
+@onready var cane = $Cane
+@onready var shield = $shield
 func _ready():
 	if Input.get_mouse_mode() != Input.MOUSE_MODE_CAPTURED:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -24,7 +26,14 @@ func _ready():
 		print("ERROR: HUD node not found! Make sure it exists and is in group 'UI'.")
 
 func _process(_delta):
-	pass
+	if GameState.weapons:
+		cane.visible = true
+		shield.visible = true
+		can_attack = true  # Enable attack when weapons are available
+	else:
+		cane.visible = false
+		shield.visible = false
+		can_attack = false  # Disable attack when weapons are not available
 
 func _input(event):
 	if event is InputEventMouseMotion:

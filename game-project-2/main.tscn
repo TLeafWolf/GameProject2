@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://cdv48fwvkumik"]
+[gd_scene load_steps=30 format=3 uid="uid://cdv48fwvkumik"]
 
 [ext_resource type="ArrayMesh" uid="uid://bcnliylecdrk1" path="res://PlaceHolders/obj/dirt_with_grass.obj" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://cniym77vlahk5" path="res://player.tscn" id="2_0xm2m"]
@@ -14,6 +14,7 @@
 [ext_resource type="Script" uid="uid://c13ea5mgi25d2" path="res://victory_screen.gd" id="11_w48qg"]
 [ext_resource type="PackedScene" uid="uid://m36cs1q6f8oc" path="res://ui.tscn" id="12_dg77c"]
 [ext_resource type="PackedScene" uid="uid://dnsjh36s2df44" path="res://Assests3dModel/stand_w_glasses.blend" id="13_ycdy4"]
+[ext_resource type="PackedScene" uid="uid://bm00wr5nbheay" path="res://Assests3dModel/Barrel.blend" id="15_vivmo"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ig7tw"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -52,6 +53,9 @@ size = Vector3(12.669922, 9.878052, 1.980957)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4c57u"]
 size = Vector3(2.2574615, 4.9941406, 5.312561)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w48qg"]
+size = Vector3(0.70910645, 1.3540039, 0.6381836)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5vw27"]
 bg_color = Color(0.5499392, 0.61939096, 0.5912887, 1)
@@ -135,14 +139,21 @@ shape = SubResource("BoxShape3D_4c57u")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.902084, 4.289582, -8.259658)
 shape = SubResource("BoxShape3D_4c57u")
 
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.124363, 2.6424737, -3.5871925)
+shape = SubResource("BoxShape3D_w48qg")
+
 [node name="UI" parent="." instance=ExtResource("12_dg77c")]
 
 [node name="CutsceneLayer" type="CanvasLayer" parent="."]
 script = ExtResource("9_kek77")
 
 [node name="Panel" type="Panel" parent="CutsceneLayer"]
-offset_right = 1151.0
-offset_bottom = 647.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_5vw27")
 
 [node name="Label" type="Label" parent="CutsceneLayer"]
@@ -162,13 +173,23 @@ offset_bottom = 579.0
 theme_override_font_sizes/font_size = 50
 text = "Play game"
 
+[node name="Label3" type="Label" parent="CutsceneLayer"]
+offset_left = 436.0
+offset_top = 595.0
+offset_right = 754.0
+offset_bottom = 639.0
+text = "Press Esc to bring back mouse cursor"
+
 [node name="VictoryScreen" type="CanvasLayer" parent="."]
 visible = false
 script = ExtResource("11_w48qg")
 
 [node name="Panel" type="Panel" parent="VictoryScreen"]
-offset_right = 1149.0
-offset_bottom = 649.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_4c57u")
 
 [node name="Label" type="Label" parent="VictoryScreen"]
@@ -207,8 +228,11 @@ visible = false
 script = ExtResource("10_4c57u")
 
 [node name="Panel" type="Panel" parent="GameOverScreen"]
-offset_right = 1148.0
-offset_bottom = 647.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_kek77")
 
 [node name="Label" type="Label" parent="GameOverScreen"]
@@ -253,6 +277,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.1372, -0.40506268, -3.5743
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Goal"]
 transform = Transform3D(0.5419885, 0, 0, 0, 2.4267163, 0, 0, 0, 1.350884, 21.675438, 0.19364738, -3.569582)
 shape = SubResource("BoxShape3D_ycdy4")
+
+[node name="Barrel" parent="." instance=ExtResource("15_vivmo")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.047389, -0.19484997, -11.167442)
 
 [connection signal="body_entered" from="Goal" to="VictoryScreen" method="_on_goal_body_entered"]
 

@@ -29,8 +29,10 @@ func show_victory():
 func _on_button_pressed() -> void:
 	# Restart the level
 	get_tree().reload_current_scene()
+	GameState.weapons = false
+	GameState.old_man_state = 0
 
 func _on_goal_body_entered(body: Node3D) -> void:
 	# Check if the player has entered the goal area
-	if body.name == "player":
+	if body.name == "player" and GameState.weapons:
 		show_victory()
