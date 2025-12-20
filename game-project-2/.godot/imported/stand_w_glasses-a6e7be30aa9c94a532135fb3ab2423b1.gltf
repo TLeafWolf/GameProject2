@@ -219,7 +219,7 @@
 		{
 			"bufferView":10,
 			"componentType":5126,
-			"count":264,
+			"count":520,
 			"max":[
 				220.1307373046875,
 				34.26300811767578,
@@ -227,7 +227,7 @@
 			],
 			"min":[
 				-1.072167992591858,
-				-39.739566802978516,
+				-40.4858283996582,
 				-1.2099335193634033
 			],
 			"type":"VEC3"
@@ -235,25 +235,25 @@
 		{
 			"bufferView":11,
 			"componentType":5126,
-			"count":264,
+			"count":520,
 			"type":"VEC3"
 		},
 		{
 			"bufferView":12,
 			"componentType":5126,
-			"count":264,
+			"count":520,
 			"type":"VEC2"
 		},
 		{
 			"bufferView":13,
 			"componentType":5126,
-			"count":264,
+			"count":520,
 			"type":"VEC4"
 		},
 		{
 			"bufferView":14,
 			"componentType":5123,
-			"count":624,
+			"count":1008,
 			"type":"SCALAR"
 		}
 	],
@@ -320,38 +320,38 @@
 		},
 		{
 			"buffer":0,
-			"byteLength":3168,
+			"byteLength":6240,
 			"byteOffset":7968,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":3168,
-			"byteOffset":11136,
+			"byteLength":6240,
+			"byteOffset":14208,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":2112,
-			"byteOffset":14304,
+			"byteLength":4160,
+			"byteOffset":20448,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":4224,
-			"byteOffset":16416,
+			"byteLength":8320,
+			"byteOffset":24608,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":1248,
-			"byteOffset":20640,
+			"byteLength":2016,
+			"byteOffset":32928,
 			"target":34963
 		}
 	],
 	"buffers":[
 		{
-			"byteLength":21888,
+			"byteLength":34944,
 			"uri":"stand_w_glasses-a6e7be30aa9c94a532135fb3ab2423b1.bin"
 		}
 	]
