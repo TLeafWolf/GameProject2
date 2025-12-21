@@ -33,6 +33,7 @@ shape = SubResource("BoxShape3D_5rhbs")
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.32281673, 1.1698661, -0.09428573)
 billboard = 1
 text = "\"Press E to talk\""
+autowrap_mode = 3
 
 [connection signal="body_entered" from="OldMan/Area3D" to="OldMan" method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="OldMan/Area3D" to="OldMan" method="_on_area_3d_body_exited"]

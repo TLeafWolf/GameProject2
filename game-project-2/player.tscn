@@ -19,7 +19,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.16488853, 0.44622886, 0.003
 shape = SubResource("BoxShape3D_4flbx")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.95693785, 0, 0, 0, 0.95693785, 0, 0, 0, 0.95693785, 0.13830441, 0.72781754, -0.12396985)
+transform = Transform3D(0.95693785, 0, 0, 0, 0.95693785, 0, 0, 0, 0.95693785, 0.13830441, 1.1271014, -0.12396985)
 fov = 75.672615
 
 [node name="Cane" parent="." instance=ExtResource("2_onrkg")]
